@@ -7,17 +7,16 @@ Write a function named `addOne` that takes an array of numbers, and returns a ne
 
 Use `forEach` to loop over the input array and work with each value.  Push the new value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
-let myArray = [1,2,3,4,5];
-const addOne = (arr) => { 
-  arr=myArray[arr-1]+1  ;
-  console.log([arr]);
-};
-  myArray.forEach(addOne);
- 
-// // ##second-sol
-  // let myArray = [1,2,3,4,5];
 
-  // const allUpperCase = myArray.map(arr =>myArray[arr-1]+1 ) ;console.log(allUpperCase);
+const addOne = (arr) => { 
+ let newArr=[];
+ arr.forEach(num => {
+   newArr.push(num+1);
+ })
+ return newArr;
+};
+ 
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -26,16 +25,16 @@ Write a function named `addExclamation` that takes an array of strings, and retu
 
 Use `forEach` to loop over the input array. Modify each string, and add the updated value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
-let stringArray=['white','blue','pink'];
+
 const addExclamation = (arr) => {
-      arr=`${[arr]} !`
-        console.log([arr]);};
-  stringArray.forEach( addExclamation);
+  let newArr=[];
+  arr.forEach(str => {
+    newArr.push(`${str}!`);
+  })
+  return newArr;
+}
+ 
 
-// // ##second-sol
-// let stringArray=['white','blue','pink'];
-
-// const allUpperCase = stringArray.map(arr =>`${[arr]} !`) ;console.log(allUpperCase);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -44,19 +43,16 @@ Write a function named `allUpperCase` that takes an array of strings, and return
 Use `forEach` to loop over the input array. The modified strings should each be added into a local array. Return that local array.
 ------------------------------------------------------------------------------------------------ */
 
-let array1 = ['you','are','special'];
+
 const addExclamation = (arr) => {
-      arr = arr.toUpperCase();
-      console.log([arr]);
+  let newArr=[];
+  arr.forEach(str => {
+    newArr.push(`${str.toUpperCase()}`);
+  })
+  return newArr;
       
-}
-array1.forEach(addExclamation);
+};
 
-// ##second-sol
-// let array1 = ['you','are','special'];
-
-// const allUpperCase = array1.map(arr =>arr.toUpperCase()) ;console.log(allUpperCase);
-// array1.forEach(allUpperCase);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -67,24 +63,20 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
 ------------------------------------------------------------------------------------------------ */
 
-let array2 = ['beautifull'];
+
 const greeting = (word) => {
-      word = `${word.toUpperCase()}!`;
-console.log(word)    
+    return `${word.toUpperCase()}!`;
 };
     
 
-array2.forEach(greeting);
-
-let array3= ['hello' , 'sunshine'];
 const speaker = (words, callback) => { 
-  words =words ;
-   callback= function callback(){};
+  let newArr=[];
+  words.forEach(str4 =>{
+    newArr.push(callback(str4));
+  });
+  return newArr;
   
-}
-
-array3.forEach(speaker) 
-
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -102,18 +94,16 @@ Within the addNumbers function, invoke the callback function as many times as ne
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
-let array4= [];
+
 const addValues = (arr, value) => {
-      arr= array4;
-      value.push = [];
+     arr.push(value);
     };
-    array4.forEach(addValues)
-
+   
 const addNumbers = (num, arr, times, callback) => {
-  num.push=[];
-arr=[num];
-
-  // Solution code here...
+for (let i=0;i<times;i++){
+  callback(arr,num);
+}
+ return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -135,7 +125,20 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+let newArray=[];
+availableItems=[
+  { name: 'apples', available: true },
+  { name: 'pears', available: true },
+  { name: 'oranges', available: false },
+  { name: 'bananas', available: true },
+  { name: 'blueberries', available: false }
+];
+availableItems.forEach(newValues =>{
+  if (newValues.available== true ){
+    newArray.push(newValues.name);
+  }
+})
+return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -152,9 +155,9 @@ Iterate over the array using forEach to determine the output based on several ru
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
-const fizzbuzz = (arr) => {
-  // Solution code here...
-};
+// const fizzbuzz = (arr) => {
+//   // Solution code here...
+// };
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
