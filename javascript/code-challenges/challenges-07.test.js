@@ -126,7 +126,6 @@ const gruffaloCrumble = {
   ]
 };
 
-
 const listFoods = (recipe) => {
   let result = [];
   result= recipe.ingredients.map(item=>item.split(' ').slice(2,item.length).join(" "))
@@ -143,7 +142,7 @@ You may also use other string or array methods.
 
 // const splitFoods = (recipe) => {
 //   let result = [];
-//   // Solution code here...
+//  
 //   return result;
 // };
 
