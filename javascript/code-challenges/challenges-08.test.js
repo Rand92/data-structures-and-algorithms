@@ -97,7 +97,8 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
 
-  return input == input.toUpperCase()
+ let test=/world/g;
+  return test.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -109,11 +110,14 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let new1= str.match(/(\b[A-Z].*?\b(.)??)/g)
-  if (new1){
-    return new1;
-  }
-  return new1;
+  let regex = /\b[A-Z]\w*/g;
+  let newArr =[];
+ 
+  if (str.match(regex)){
+    newArr = str.match(regex);
+  } 
+  return newArr;
+ 
 }
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
