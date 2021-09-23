@@ -11,12 +11,16 @@ Write a function named screenForNames that takes in an array of strings and uses
 ------------------------------------------------------------------------------------------------ */
 
 const screenForNames = (arr) => {
+
   let newArr1= arr.filter((item) => {
     if (/^([MD]r|[MD]rs|Ms).\s[A-Z]\w*/g.test(item)){
       return item;
     }
   });
   return newArr1;
+
+  // Solution code here...
+
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -28,9 +32,13 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
+
   let newArr2 = []
   arr.map(item=>newArr2.push(item.charAt(0).toUpperCase() + item.slice(1)))
   return(newArr2);
+
+  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,6 +113,7 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
+
   let newArr3 = arr.filter((obj) => {
     if (obj.mass > 77) {
       return obj;
@@ -113,6 +122,9 @@ let biggerThanLuke = (arr) => {
     return element.name;
   }).join(' - ');
   return newArr3;
+
+  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -130,7 +142,11 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
+
   return arr.sort((a, b) => a[property] > b[property] ? 1 : -1)
+
+  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -146,7 +162,11 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
+
   return /^https:\/\//g.test(url);
+
+  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
